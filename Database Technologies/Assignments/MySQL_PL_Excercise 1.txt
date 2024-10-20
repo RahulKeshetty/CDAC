@@ -1,0 +1,110 @@
+1) 
+mysql> delimiter //
+mysql> create procedure calc_perimeter3(len float, wid float)
+    -> begin
+    -> declare peri float;
+    -> declare area float;
+    -> set peri = 2*(len + wid);
+    -> set area = len * wid;
+    -> insert into tempp values(len, wid);
+    -> insert into tempp values(peri, 'Perimeter');
+    -> insert into tempp values(area, 'Area');
+    -> end; //
+mysql> delimiter ;
+mysql> call calc_perimeter3();
+
+
+2)
+mysql> delimiter //
+mysql> create procedure declare_integer1(val int)
+    -> begin
+    -> declare sq int;
+    -> declare cub int;
+    -> set sq = val*val;
+    -> set cub = val*val*val;
+    -> insert into tempp values(val, 'Variable');
+    -> insert into tempp values(sq, 'Square');
+    -> insert into tempp values(cub, 'Cube');
+    -> end; //
+mysql> delimiter //
+mysql> call declare_integer1(5);
+    -> //
+mysql> delimiter ;
+
+
+3)
+mysql> delimiter //
+mysql> create procedure temperature()
+    -> begin
+    -> declare F float;
+    -> declare C float;
+    -> set C = 24.5;
+    -> set F = 9/5*C + 32;
+    -> insert into tempp values(F, 'Fahrenheit');
+    -> set F = 75.5;
+    -> set C = (F-32)*5/9;
+    -> insert into tempp values(C, 'Celsius');
+    -> end; //
+mysql> delimiter ;
+mysql> call temperature()
+    -> ;
+
+
+4)
+
+
+5)
+delimiter //
+create procedure inp_int3(val int)
+begin 
+declare str char(20);
+declare temp int;
+if mod(val,5)=0 then
+	set temp = val/5;
+	if mod(temp,2)=0 then
+		set str = 'true';
+	else 
+		set str = 'false';
+	end if;
+else 
+set str = 'false';
+end if; 
+insert into tempp values(val, str);
+end //
+delimiter ;
+call inp_int3(20);
+
+
+6)
+delimiter //
+create procedure ques63(val1 int, val2 int)
+begin
+declare temp int;
+declare str char(20);
+set temp = val1*val2;
+if temp>100 then
+	set str = 'true';
+else
+	set str = 'false';
+end if;
+insert into tempp5 values(temp, str);
+end//
+delimiter ;
+
+call ques63(10,15);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
