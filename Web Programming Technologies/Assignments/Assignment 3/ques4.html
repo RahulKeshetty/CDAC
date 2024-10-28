@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ques4</title>
+</head>
+<body>
+    <p id="p1">
+        [Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, iure?]
+    </p>
+
+    <p>
+        Lorem ipsum, <b>dolor</b> sit amet consectetur <b>adipisicing</b> elit. Aliquid voluptatem officiis dolorum distinctio <b>similique</b> provident ab explicabo <b>obcaecati</b>, unde sunt.
+    </p>
+
+    <script>
+        document.querySelector('#p1').addEventListener('mouseover', function() {
+            document.querySelectorAll('b').forEach(function(b) {
+                b.style.color = 'blue';
+            }); 
+        });
+    </script>
+</body>
+</html>
