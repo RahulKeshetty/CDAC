@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ques3</title>
+</head>
+<body>
+    <p>Select an option:</p>
+    <select name="" id="">
+        <option value="">Mercedes</option>
+        <option value="">Audi</option>
+        <option value="">Range Rover</option>
+        <option value="" id="Maruti">Maruti Suzuki</option>
+    </select>
+    <button>Delete Maruti</button>
+
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+            document.getElementById('Maruti').textContent = '';
+        });
+    </script>
+</body>
+</html> 
