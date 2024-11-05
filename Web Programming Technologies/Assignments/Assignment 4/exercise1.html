@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function toUpperCase(str) {
+            return str.toUpperCase(str);
+        }
+
+        function processData(inpstr, callback) {
+            const res = toUpperCase(inpstr);
+            console.log(res);
+        }
+
+        const str = "string";
+        processData(str,toUpperCase);
+    </script>
+</body>
+</html>
