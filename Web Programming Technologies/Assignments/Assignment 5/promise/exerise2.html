@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        console.log("Program started");
+
+        const myPromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve();
+            },3000)
+        })
+
+        console.log(myPromise);
+
+        console.log("Prog still in progress");
+
+        myPromise.then(() => {
+            console.log("Step 1 complete");
+            return new Promise((resolve,reject) => {
+                setTimeout(() => {
+                    resolve("Step2 complete");
+                },3000)
+            })
+        }).then((val) => {
+            console.log(val);
+        })
+    </script>
+</body>
+</html>
